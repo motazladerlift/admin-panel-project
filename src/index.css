@@ -43,6 +43,28 @@
     outline: 2px solid #ff6b35;
     outline-offset: 2px;
   }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    body {
+      font-size: 14px;
+    }
+    
+    /* Improve touch targets */
+    button, input, select, textarea {
+      min-height: 44px;
+    }
+    
+    /* Better spacing for mobile */
+    .mobile-padding {
+      padding: 1rem;
+    }
+    
+    /* Improve form elements on mobile */
+    input, textarea, select {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
 }
 
 /* Admin Panel Custom Components */
@@ -87,6 +109,23 @@
     @apply backdrop-blur-md bg-white/10 border border-white/20;
   }
 
+  /* Mobile-optimized components */
+  .mobile-tab-menu {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden;
+  }
+
+  .mobile-tab-item {
+    @apply w-full flex items-center px-4 py-3 text-left text-sm font-medium rounded-md transition-colors;
+  }
+
+  .mobile-tab-item-active {
+    @apply bg-blue-50 text-blue-700 border border-blue-200;
+  }
+
+  .mobile-tab-item-inactive {
+    @apply text-gray-700 hover:bg-gray-50;
+  }
+
   /* Status badges */
   .status-online {
     @apply bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-medium;
@@ -119,6 +158,28 @@
 
   .alert-info {
     @apply bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-lg;
+  }
+
+  /* Mobile modal improvements */
+  .mobile-modal {
+    @apply fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 p-4;
+  }
+
+  .mobile-modal-content {
+    @apply relative top-10 mx-auto p-5 border w-full max-w-sm shadow-lg rounded-md bg-white;
+  }
+
+  /* Form improvements for mobile */
+  .mobile-form-grid {
+    @apply grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2;
+  }
+
+  .mobile-form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base;
+  }
+
+  .mobile-form-textarea {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base resize-vertical;
   }
 }
 
@@ -213,5 +274,45 @@
   /* Margin responsive */
   .m-responsive {
     @apply m-4 sm:m-6 lg:m-8;
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-only {
+    @apply block lg:hidden;
+  }
+
+  .desktop-only {
+    @apply hidden lg:block;
+  }
+
+  .mobile-button {
+    @apply inline-flex items-center justify-center px-3 sm:px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+
+  .mobile-button-primary {
+    @apply inline-flex items-center justify-center px-3 sm:px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+
+  /* Touch-friendly improvements */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Mobile navigation improvements */
+  .mobile-nav-toggle {
+    @apply w-full inline-flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors;
+  }
+
+  /* Mobile form improvements */
+  .mobile-form-section {
+    @apply mb-4 sm:mb-6;
+  }
+
+  .mobile-form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+
+  .mobile-form-help {
+    @apply mt-1 text-xs sm:text-sm text-gray-500;
   }
 }

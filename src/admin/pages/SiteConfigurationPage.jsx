@@ -181,11 +181,11 @@ const SiteConfigurationPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 p-6">
+      <div className="min-h-screen bg-gray-50 p-4 sm:p-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Site Configuratie</h1>
-            <p className="text-gray-600">Beheer contactgegevens en sociale media links</p>
+          <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Site Configuratie</h1>
+            <p className="text-sm sm:text-base text-gray-600">Beheer contactgegevens en sociale media links</p>
           </div>
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
@@ -197,41 +197,41 @@ const SiteConfigurationPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen bg-gray-50 p-4 sm:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4">
+        <div className="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-4 sm:mb-6">
+          <div className="flex flex-col space-y-4 lg:flex-row lg:justify-between lg:items-center lg:space-y-0">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">Site Configuratie</h1>
-              <p className="text-gray-600">Beheer contactgegevens en sociale media links</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Site Configuratie</h1>
+              <p className="text-sm sm:text-base text-gray-600">Beheer contactgegevens en sociale media links</p>
             </div>
             <div className="flex flex-col sm:flex-row gap-2">
               <button 
                 onClick={() => setShowResetModal(true)}
                 disabled={saving}
-                className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center justify-center px-3 sm:px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 <RefreshCw size={16} className="mr-2" />
-                <span className="hidden md:inline">Reset naar Standaard</span>
-                <span className="md:hidden">Reset</span>
+                <span className="hidden sm:inline">Reset naar Standaard</span>
+                <span className="sm:hidden">Reset</span>
               </button>
               <button 
                 onClick={handleSubmit}
                 disabled={saving}
-                className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center justify-center px-3 sm:px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {saving ? (
                   <>
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    <span className="hidden md:inline">Opslaan...</span>
-                    <span className="md:hidden">Opslaan</span>
+                    <span className="hidden sm:inline">Opslaan...</span>
+                    <span className="sm:hidden">Opslaan</span>
                   </>
                 ) : (
                   <>
                     <Save size={16} className="mr-2" />
-                    <span className="hidden md:inline">Opslaan</span>
-                    <span className="md:hidden">Opslaan</span>
+                    <span className="hidden sm:inline">Opslaan</span>
+                    <span className="sm:hidden">Opslaan</span>
                   </>
                 )}
               </button>
@@ -241,20 +241,20 @@ const SiteConfigurationPage = () => {
 
         {/* Error Alert */}
         {error && (
-          <div className="bg-red-50 border border-red-200 rounded-md p-4 mb-6">
+          <div className="bg-red-50 border border-red-200 rounded-md p-4 mb-4 sm:mb-6">
             <div className="flex">
-              <AlertCircle size={20} className="text-red-400 mr-2 mt-0.5" />
-              <div className="text-red-700">{error}</div>
+              <AlertCircle size={20} className="text-red-400 mr-2 mt-0.5 flex-shrink-0" />
+              <div className="text-sm sm:text-base text-red-700">{error}</div>
             </div>
           </div>
         )}
 
         {/* Success Alert */}
         {success && (
-          <div className="bg-green-50 border border-green-200 rounded-md p-4 mb-6">
+          <div className="bg-green-50 border border-green-200 rounded-md p-4 mb-4 sm:mb-6">
             <div className="flex">
-              <CheckCircle size={20} className="text-green-400 mr-2 mt-0.5" />
-              <div className="text-green-700">Configuratie succesvol opgeslagen!</div>
+              <CheckCircle size={20} className="text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+              <div className="text-sm sm:text-base text-green-700">Configuratie succesvol opgeslagen!</div>
             </div>
           </div>
         )}
@@ -265,97 +265,92 @@ const SiteConfigurationPage = () => {
             <button
               type="button"
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="w-full inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full inline-flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
             >
-              <Menu size={16} className="mr-2" />
-              {showMobileMenu ? 'Sluit Menu' : 'Open Menu'}
+              {showMobileMenu ? (
+                <>
+                  <X size={16} className="mr-2" />
+                  Sluit Menu
+                </>
+              ) : (
+                <>
+                  <Menu size={16} className="mr-2" />
+                  Open Menu
+                </>
+              )}
             </button>
           </div>
 
-          {/* Tabs */}
-          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-            {/* Tab Navigation */}
+          {/* Mobile Tab Menu */}
+          {showMobileMenu && (
+            <div className="lg:hidden mb-4 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <div className="p-2 space-y-1">
+                {[
+                  { key: 'contact', label: 'Contactgegevens', icon: Phone },
+                  { key: 'address', label: 'Adres', icon: MapPin },
+                  { key: 'hours', label: 'Openingstijden', icon: Clock },
+                  { key: 'social', label: 'Sociale Media', icon: Facebook },
+                  { key: 'company', label: 'Bedrijfsinformatie', icon: Building }
+                ].map(({ key, label, icon: Icon }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => handleTabChange(key)}
+                    className={`w-full flex items-center px-4 py-3 text-left text-sm font-medium rounded-md transition-colors ${
+                      activeTab === key
+                        ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    <Icon size={16} className="mr-3" />
+                    {label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Desktop Tabs */}
+          <div className="hidden lg:block bg-white rounded-lg shadow-sm overflow-hidden mb-4">
             <div className="border-b border-gray-200">
               <nav className="-mb-px flex space-x-8 px-6" aria-label="Tabs">
-                <button
-                  type="button"
-                  onClick={() => handleTabChange('contact')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
-                    activeTab === 'contact'
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  <Phone size={16} className="mr-2" />
-                  <span className="hidden md:inline">Contactgegevens</span>
-                  <span className="md:hidden">Contact</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTabChange('address')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
-                    activeTab === 'address'
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  <MapPin size={16} className="mr-2" />
-                  <span className="hidden md:inline">Adres</span>
-                  <span className="md:hidden">Adres</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTabChange('hours')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
-                    activeTab === 'hours'
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  <Clock size={16} className="mr-2" />
-                  <span className="hidden md:inline">Openingstijden</span>
-                  <span className="md:hidden">Tijden</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTabChange('social')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
-                    activeTab === 'social'
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  <Facebook size={16} className="mr-2" />
-                  <span className="hidden md:inline">Sociale Media</span>
-                  <span className="md:hidden">Social</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTabChange('company')}
-                  className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center ${
-                    activeTab === 'company'
-                      ? 'border-blue-500 text-blue-600'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-                >
-                  <Building size={16} className="mr-2" />
-                  <span className="hidden md:inline">Bedrijfsinformatie</span>
-                  <span className="md:hidden">Bedrijf</span>
-                </button>
+                {[
+                  { key: 'contact', label: 'Contactgegevens', icon: Phone },
+                  { key: 'address', label: 'Adres', icon: MapPin },
+                  { key: 'hours', label: 'Openingstijden', icon: Clock },
+                  { key: 'social', label: 'Sociale Media', icon: Facebook },
+                  { key: 'company', label: 'Bedrijfsinformatie', icon: Building }
+                ].map(({ key, label, icon: Icon }) => (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() => handleTabChange(key)}
+                    className={`py-4 px-1 border-b-2 font-medium text-sm flex items-center transition-colors ${
+                      activeTab === key
+                        ? 'border-blue-500 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    <Icon size={16} className="mr-2" />
+                    {label}
+                  </button>
+                ))}
               </nav>
             </div>
+          </div>
 
-            {/* Tab Content */}
-            <div className="p-6">
+          {/* Tab Content */}
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <div className="p-4 sm:p-6">
               {/* Contact Information Tab */}
               {activeTab === 'contact' && (
                 <div>
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Contact Informatie</h3>
-                    <p className="text-gray-600">Beheer telefoon, email en WhatsApp gegevens</p>
+                    <p className="text-sm sm:text-base text-gray-600">Beheer telefoon, email en WhatsApp gegevens</p>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Telefoonnummer
@@ -365,9 +360,9 @@ const SiteConfigurationPage = () => {
                         value={config?.contact?.phone || ''}
                         onChange={(e) => handleInputChange('contact', 'phone', e.target.value)}
                         placeholder="+32 469 11 91 19"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
-                      <p className="mt-1 text-sm text-gray-500">
+                      <p className="mt-1 text-xs sm:text-sm text-gray-500">
                         Volledig telefoonnummer met landcode
                       </p>
                     </div>
@@ -381,9 +376,9 @@ const SiteConfigurationPage = () => {
                         value={config?.contact?.phone_display || ''}
                         onChange={(e) => handleInputChange('contact', 'phone_display', e.target.value)}
                         placeholder="0469 119 119"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
-                      <p className="mt-1 text-sm text-gray-500">
+                      <p className="mt-1 text-xs sm:text-sm text-gray-500">
                         Hoe het nummer wordt weergegeven op de website
                       </p>
                     </div>
@@ -397,7 +392,7 @@ const SiteConfigurationPage = () => {
                         value={config?.contact?.email || ''}
                         onChange={(e) => handleInputChange('contact', 'email', e.target.value)}
                         placeholder="motazladerlift@gmail.com"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -410,7 +405,7 @@ const SiteConfigurationPage = () => {
                         value={config?.contact?.email_display || ''}
                         onChange={(e) => handleInputChange('contact', 'email_display', e.target.value)}
                         placeholder="motazladerlift@gmail.com"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -423,7 +418,7 @@ const SiteConfigurationPage = () => {
                         value={config?.contact?.whatsapp || ''}
                         onChange={(e) => handleInputChange('contact', 'whatsapp', e.target.value)}
                         placeholder="https://wa.me/message/27GB2V4YVAZ4E1"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -436,7 +431,7 @@ const SiteConfigurationPage = () => {
                         value={config?.contact?.whatsapp_number || ''}
                         onChange={(e) => handleInputChange('contact', 'whatsapp_number', e.target.value)}
                         placeholder="+32469119119"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
                   </div>
@@ -446,13 +441,13 @@ const SiteConfigurationPage = () => {
               {/* Address Tab */}
               {activeTab === 'address' && (
                 <div>
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Adres Informatie</h3>
-                    <p className="text-gray-600">Beheer het hoofdkantoor adres</p>
+                    <p className="text-sm sm:text-base text-gray-600">Beheer het hoofdkantoor adres</p>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div>
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
+                    <div className="lg:col-span-2">
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Straat & Huisnummer
                       </label>
@@ -461,7 +456,7 @@ const SiteConfigurationPage = () => {
                         value={config?.address?.street || ''}
                         onChange={(e) => handleInputChange('address', 'street', e.target.value)}
                         placeholder="Frans Adriaenssensstraat 25"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -474,7 +469,7 @@ const SiteConfigurationPage = () => {
                         value={config?.address?.postal_code || ''}
                         onChange={(e) => handleInputChange('address', 'postal_code', e.target.value)}
                         placeholder="2170"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -487,11 +482,11 @@ const SiteConfigurationPage = () => {
                         value={config?.address?.city || ''}
                         onChange={(e) => handleInputChange('address', 'city', e.target.value)}
                         placeholder="Antwerpen"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
-                    <div>
+                    <div className="lg:col-span-2">
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Land
                       </label>
@@ -500,7 +495,7 @@ const SiteConfigurationPage = () => {
                         value={config?.address?.country || ''}
                         onChange={(e) => handleInputChange('address', 'country', e.target.value)}
                         placeholder="België"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
                   </div>
@@ -510,12 +505,12 @@ const SiteConfigurationPage = () => {
               {/* Business Hours Tab */}
               {activeTab === 'hours' && (
                 <div>
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Openingstijden</h3>
-                    <p className="text-gray-600">Beheer de beschikbaarheid van het bedrijf</p>
+                    <p className="text-sm sm:text-base text-gray-600">Beheer de beschikbaarheid van het bedrijf</p>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Weergave Openingstijden
@@ -525,9 +520,9 @@ const SiteConfigurationPage = () => {
                         value={config?.business_hours?.display || ''}
                         onChange={(e) => handleInputChange('business_hours', 'display', e.target.value)}
                         placeholder="24 uur / 7 dagen"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
-                      <p className="mt-1 text-sm text-gray-500">
+                      <p className="mt-1 text-xs sm:text-sm text-gray-500">
                         Korte beschrijving van openingstijden
                       </p>
                     </div>
@@ -541,9 +536,9 @@ const SiteConfigurationPage = () => {
                         value={config?.business_hours?.availability || ''}
                         onChange={(e) => handleInputChange('business_hours', 'availability', e.target.value)}
                         placeholder="24/7 Beschikbaar"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
-                      <p className="mt-1 text-sm text-gray-500">
+                      <p className="mt-1 text-xs sm:text-sm text-gray-500">
                         Uitgebreide beschrijving van beschikbaarheid
                       </p>
                     </div>
@@ -554,12 +549,12 @@ const SiteConfigurationPage = () => {
               {/* Social Media Tab */}
               {activeTab === 'social' && (
                 <div>
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Sociale Media Links</h3>
-                    <p className="text-gray-600">Beheer alle sociale media profielen</p>
+                    <p className="text-sm sm:text-base text-gray-600">Beheer alle sociale media profielen</p>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
                         <Facebook size={16} className="mr-2" />
@@ -570,7 +565,7 @@ const SiteConfigurationPage = () => {
                         value={config?.social_media?.facebook || ''}
                         onChange={(e) => handleInputChange('social_media', 'facebook', e.target.value)}
                         placeholder="https://www.facebook.com/motaz.ladderlift"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -584,7 +579,7 @@ const SiteConfigurationPage = () => {
                         value={config?.social_media?.instagram || ''}
                         onChange={(e) => handleInputChange('social_media', 'instagram', e.target.value)}
                         placeholder="https://www.instagram.com/motaz_ladderlift/"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -598,7 +593,7 @@ const SiteConfigurationPage = () => {
                         value={config?.social_media?.youtube || ''}
                         onChange={(e) => handleInputChange('social_media', 'youtube', e.target.value)}
                         placeholder="https://www.youtube.com/@motazladderlift"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -614,7 +609,7 @@ const SiteConfigurationPage = () => {
                         value={config?.social_media?.tiktok || ''}
                         onChange={(e) => handleInputChange('social_media', 'tiktok', e.target.value)}
                         placeholder="https://www.tiktok.com/@motazladderlift"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -628,7 +623,7 @@ const SiteConfigurationPage = () => {
                         value={config?.social_media?.linkedin || ''}
                         onChange={(e) => handleInputChange('social_media', 'linkedin', e.target.value)}
                         placeholder="https://www.linkedin.com/company/motaz-ladderlift"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -642,7 +637,7 @@ const SiteConfigurationPage = () => {
                         value={config?.social_media?.twitter || ''}
                         onChange={(e) => handleInputChange('social_media', 'twitter', e.target.value)}
                         placeholder="https://twitter.com/motazladderlift"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
                   </div>
@@ -652,12 +647,12 @@ const SiteConfigurationPage = () => {
               {/* Company Information Tab */}
               {activeTab === 'company' && (
                 <div>
-                  <div className="mb-6">
+                  <div className="mb-4 sm:mb-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Bedrijfsinformatie</h3>
-                    <p className="text-gray-600">Beheer bedrijfsnaam en beschrijving</p>
+                    <p className="text-sm sm:text-base text-gray-600">Beheer bedrijfsnaam en beschrijving</p>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-2">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Bedrijfsnaam
@@ -667,7 +662,7 @@ const SiteConfigurationPage = () => {
                         value={config?.company?.name || ''}
                         onChange={(e) => handleInputChange('company', 'name', e.target.value)}
                         placeholder="Motaz Ladderlift"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -680,7 +675,7 @@ const SiteConfigurationPage = () => {
                         value={config?.company?.founded_year || ''}
                         onChange={(e) => handleInputChange('company', 'founded_year', parseInt(e.target.value) || null)}
                         placeholder="2020"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -693,7 +688,7 @@ const SiteConfigurationPage = () => {
                         onChange={(e) => handleInputChange('company', 'description', e.target.value)}
                         placeholder="Professionele verhuis- en ladderlift services in Antwerpen en omgeving."
                         rows={3}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base resize-vertical"
                       />
                     </div>
 
@@ -706,7 +701,7 @@ const SiteConfigurationPage = () => {
                         value={config?.company?.tagline || ''}
                         onChange={(e) => handleInputChange('company', 'tagline', e.target.value)}
                         placeholder="Uw betrouwbare partner voor verhuis en ladderlift services"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -719,7 +714,7 @@ const SiteConfigurationPage = () => {
                         value={config?.company?.registration_number || ''}
                         onChange={(e) => handleInputChange('company', 'registration_number', e.target.value)}
                         placeholder="12345678"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
 
@@ -732,7 +727,7 @@ const SiteConfigurationPage = () => {
                         value={config?.company?.vat_number || ''}
                         onChange={(e) => handleInputChange('company', 'vat_number', e.target.value)}
                         placeholder="BE0123456789"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
                       />
                     </div>
                   </div>
@@ -744,24 +739,24 @@ const SiteConfigurationPage = () => {
 
         {/* Reset Modal */}
         {showResetModal && (
-          <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-            <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+          <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50 p-4">
+            <div className="relative top-10 mx-auto p-5 border w-full max-w-sm shadow-lg rounded-md bg-white">
               <div className="mt-3 text-center">
                 <h3 className="text-lg font-medium text-gray-900 mb-4">Reset naar Standaard</h3>
                 <p className="text-sm text-gray-500 mb-6">
                   Weet je zeker dat je alle configuratie wilt resetten naar de standaardwaarden? 
                   Deze actie kan niet ongedaan worden gemaakt.
                 </p>
-                <div className="flex justify-center space-x-3">
+                <div className="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-3">
                   <button
                     onClick={() => setShowResetModal(false)}
-                    className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    className="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-500 transition-colors"
                   >
                     Annuleren
                   </button>
                   <button
                     onClick={resetToDefaults}
-                    className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+                    className="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
                   >
                     Reset
                   </button>
